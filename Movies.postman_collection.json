@@ -1,0 +1,275 @@
+{
+	"info": {
+		"_postman_id": "3b6c9652-8372-45fa-a211-e7bcfffbed0c",
+		"name": "Movies",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8486076"
+	},
+	"item": [
+		{
+			"name": "List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{api}}/movies",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Store",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Pengabdi Setan 2 Comunion",
+							"description": "required",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Sebuah film horor Indonesia tahun 2022\nyang disutradarai dan ditulis oleh Joko\nAnwar sebagai sekuel dari film tahun\n2017, Pengabdi Setan.",
+							"description": "required",
+							"type": "text"
+						},
+						{
+							"key": "rating",
+							"value": "7.00",
+							"description": "required|float",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{api}}/movies",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"movies"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Store: Pengabdi Setan 2 Comunion",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Pengabdi Setan 2 Comunion",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Sebuah film horor Indonesia tahun 2022\nyang disutradarai dan ditulis oleh Joko\nAnwar sebagai sekuel dari film tahun\n2017, Pengabdi Setan.",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "rating",
+									"value": "7.00",
+									"description": "required|float",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api}}/movies",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Detail",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{api}}/movies/{{id}}",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"movies",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "Pengabdi Setan 2 Comunion",
+							"description": "required",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Sebuah film horor Indonesia tahun 2022\nyang disutradarai dan ditulis oleh Joko\nAnwar sebagai sekuel dari film tahun\n2017, Pengabdi Setan.",
+							"description": "required",
+							"type": "text"
+						},
+						{
+							"key": "rating",
+							"value": "7.50",
+							"description": "required|float",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{api}}/movies/{{id}}",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"movies",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{api}}/movies/{{id}}",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"movies",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "api",
+			"value": "http://localhost:8000/api",
+			"type": "string"
+		},
+		{
+			"key": "id",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

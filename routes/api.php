@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\MoviesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::name('api.')->group(function () {
+    Route::prefix('movies')->name('movies.')->group(function () {
+        Route::get('/', [MoviesController::class, 'index'])->name('index');
+        Route::post('/', [MoviesController::class, 'store'])->name('store');
+        Route::get('/{id}', [MoviesController::class, 'detail'])->name('detail')->whereNumber('id');
+        Route::patch('/{id}', [MoviesController::class, 'update'])->name('update')->whereNumber('id');
+        Route::delete('/{id}', [MoviesController::class, 'delete'])->name('delete')->whereNumber('id');
+    });
 });
